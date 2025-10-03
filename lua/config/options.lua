@@ -1,10 +1,13 @@
 local opt = vim.opt
 
+vim.opt.winbar = "%=%m %f"
+vim.g.snacks_animate = false
+
 -- General settings
 opt.mouse = "a" -- Enable mouse support
 opt.clipboard = "unnamedplus" -- Use system clipboard
 opt.swapfile = false -- Disable swap files
-opt.undofile = true 
+opt.undofile = true
 opt.backup = false -- Disable backup files
 opt.writebackup = false -- Disable backup before write
 opt.undofile = true -- Enable persistent undo
@@ -72,14 +75,5 @@ end
 
 vim.diagnostic.config({
 	-- virtual_lines = true,
-	virtual_text = true	
+	virtual_text = true,
 })
-
-
-
-
-
-
-
-
-
