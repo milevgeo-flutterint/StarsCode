@@ -4,6 +4,12 @@ A custom Neovim configuration built with PokerStars branding and optimized for m
 
 ## Features
 
+### Copilot Agent
+- Using the latest available Claude 4.0
+- Added custom prompts that create a PR description based on all staged files with pre-provided template that is agreed among developers.
+- Quick chat or Agent mode, whatever you need.
+- Providing basic context from your opened buffers (tabs) to better understand what you currently work on.
+
 ### 🎨 Custom PokerStars Theme
 
 - Custom color scheme based on PokerStars brand colors
@@ -67,6 +73,16 @@ Persistent session support to resume your work exactly where you left off:
 - **Git Integration** - GitSigns for git status in files
 - **Fuzzy Finding** - Telescope for file and text search
 - **Snippets** - LuaSnip for code snippets
+
+### Performance
+- Average Startup time: 68.11ms
+
+- Based on the actual CPU time of the Neovim process till UIEnter.
+  This is more accurate than `nvim --startuptime`.
+  
+- LazyStart 14.99ms
+- LazyDone  63.45ms (+48.47ms)
+- UIEnter   68.11ms (+4.66ms)
 
 ## Installation
 
