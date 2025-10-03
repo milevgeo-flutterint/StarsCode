@@ -2,9 +2,18 @@
 
 A custom Neovim configuration built with PokerStars branding and optimized for modern development workflows. This configuration provides VS Code-like functionality while maintaining Vim's power and efficiency.
 
+## Repository URL
+
+<https://github.com/milevgeo-flutterint/StarsCode>
+
+## Authors
+
+Georgi Milev and Petar Dyakov
+
 ## Features
 
 ### Copilot Agent
+
 - Using the latest available Claude 4.0
 - Added custom prompts that create a PR description based on all staged files with pre-provided template that is agreed among developers.
 - Quick chat or Agent mode, whatever you need.
@@ -75,18 +84,19 @@ Persistent session support to resume your work exactly where you left off:
 - **Snippets** - LuaSnip for code snippets
 
 ### Performance
+
 - Average Startup time: 68.11ms
 
 - Based on the actual CPU time of the Neovim process till UIEnter.
   This is more accurate than `nvim --startuptime`.
-  
 - LazyStart 14.99ms
-- LazyDone  63.45ms (+48.47ms)
-- UIEnter   68.11ms (+4.66ms)
+- LazyDone 63.45ms (+48.47ms)
+- UIEnter 68.11ms (+4.66ms)
 
 ## Installation
 
 1. **Backup existing configuration** (if any):
+
    ```bash
    mv ~/.config/nvim ~/.config/nvim.backup
    ```
