@@ -1,47 +1,30 @@
--- Core Neovim options and settings
 local opt = vim.opt
 
 -- General settings
 opt.mouse = "a" -- Enable mouse support
 opt.clipboard = "unnamedplus" -- Use system clipboard
 opt.swapfile = false -- Disable swap files
+opt.undofile = true 
 opt.backup = false -- Disable backup files
 opt.writebackup = false -- Disable backup before write
 opt.undofile = true -- Enable persistent undo
 opt.updatetime = 250 -- Faster completion (4000ms default)
 opt.timeoutlen = 300 -- Time to wait for mapped sequence
 
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Visual settings
 opt.termguicolors = true -- Enable 24-bit RGB colors
-opt.number = true -- Show line numbers
-opt.relativenumber = true -- Show relative line numbers
-opt.cursorline = true -- Highlight current line
-opt.signcolumn = "yes" -- Always show sign column
-opt.wrap = false -- Disable line wrapping
-opt.scrolloff = 8 -- Keep 8 lines visible above/below cursor
-opt.sidescrolloff = 8 -- Keep 8 columns visible left/right of cursor
-opt.colorcolumn = "80" -- Show column guide at 80 characters
-
--- Indentation
-opt.expandtab = true -- Use spaces instead of tabs
-opt.shiftwidth = 2 -- Size of an indent
-opt.tabstop = 2 -- Number of spaces tabs count for
-opt.smartindent = true -- Insert indents automatically
-opt.autoindent = true -- Copy indent from current line
-
--- Search settings
-opt.ignorecase = true -- Ignore case in search patterns
-opt.smartcase = true -- Override ignorecase if search contains capitals
-opt.hlsearch = false -- Don't highlight search results
-opt.incsearch = true -- Show search matches as you type
-
--- Split settings
-opt.splitbelow = true -- New horizontal splits below current
-opt.splitright = true -- New vertical splits to right of current
-
--- Completion settings
-opt.completeopt = { "menu", "menuone", "noselect" } -- Better completion experience
-opt.pumheight = 10 -- Maximum number of completion items
+opt.number = true
+opt.cursorline = true
+opt.relativenumber = true
+opt.shiftwidth = 2
+opt.tabstop = 2
+opt.autoindent = true
+opt.wrap = false
+opt.smartindent = true
 
 -- File encoding
 opt.fileencoding = "utf-8" -- File encoding
@@ -55,10 +38,13 @@ opt.foldmethod = "expr" -- Use treesitter for folding
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldenable = false -- Don't fold by default
 
+-- Split panes
+opt.splitright = true
+opt.splitbelow = true
+
 -- GUI settings
 if vim.g.neovide then
-	opt.guifont = "FiraCode Nerd Font:h12"
-	vim.g.neovide_transparency = 0.9
+	opt.guifont = "0xProto Nerd Font:h12"
 	vim.g.neovide_cursor_animation_length = 0.1
 end
 
@@ -83,3 +69,17 @@ local disabled_built_ins = {
 for _, plugin in pairs(disabled_built_ins) do
 	vim.g["loaded_" .. plugin] = 1
 end
+
+vim.diagnostic.config({
+	-- virtual_lines = true,
+	virtual_text = true	
+})
+
+
+
+
+
+
+
+
+
